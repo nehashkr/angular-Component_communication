@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <th>ID</th>
+                <th>LOGIN</th>
+                <th>AVATAR</th>
+                <th>URL</th>
+            </thead>
+            <tbody class="table-info" *ngFor = "let users of git">
+                <td>{{users.id}}</td>
+                <td>{{users.login}}</td>
+                <td class="img"><img [src]="users.avatar_url" alt="" height="50px" width="50px" ></td>
+                <td><a [href]="users.html_url" target="_blank">{{users.html_url}}</a></td>
+            </tbody>
+        </table><br>
+
+    </div>
+    <div class="col-6">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <th>Id</th>
+                <th>title</th>
+               
+                <th>status</th>
+            </thead>
+            <tbody class="table-info" *ngFor = "let OMDB of omdb">
+               <tr *ngIf = "OMDB.completed == false">
+                <td>{{OMDB.id}}</td>
+                <td>{{OMDB.title}}</td>
+                <td>{{OMDB.completed}}</td>
+               </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    
+</div>
+

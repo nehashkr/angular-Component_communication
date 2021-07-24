@@ -1,0 +1,53 @@
+<div class="page-area">
+    <div class="text-center">
+        <h2 class="center">Buy Products</h2>
+    </div>
+    <div class="alert alert-light border d-flex align-item-center" *ngIf="addedProduct">
+        <strong class="text-success">{{addedProduct}}</strong> &nbsp; is selected and added in cart
+        <button class="btn btn-success ml-auto">checkout </button>
+    </div>
+    <hr class="mb-3">
+        <div class="row divContainer mx-3 my-5">
+            <div class="card d-inline-block" style="width: 18rem;" appTestdirective>
+                <img src="../../assets/img1.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop</h5>
+
+                    <button class="btn btn-primary" (click)="onSelectProduct('Laptop')">Select this product</button>
+                </div>
+              </div>
+              <div class="card d-inline-block" style="width: 18rem;" appTestdirective>
+                <img src="../../assets/img2.jpeg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">TV</h5>
+
+                    <button class="btn btn-primary" (click)="onSelectProduct('TV')">Select this product</button>
+                </div>
+                </div>
+                <div class="card d-inline-block" style="width: 18rem;" appTestdirective>
+                    <img src="../../assets/img3.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile</h5>
+    
+                        <button class="btn btn-primary" (click)="onSelectProduct('Mobile')">Select this product</button>
+                    </div>
+                  </div>
+                  <div class="card d-inline-block" style="width: 18rem;" appTestdirective>
+                    <img src="../../assets/img4.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Washing Machine</h5>
+    
+                        <button class="btn btn-primary" (click)="onSelectProduct('Washing Machine')">Select this product</button>
+                    </div>
+                    </div>
+        </div>
+    
+        <app-child class="w-100"
+           [productsSelected]="proSelected"
+           [selectedProduct]="selProduct"
+           (addedProduct)="onAddedProduct($event)"
+           >
+        </app-child>
+
+
+        
